@@ -20,19 +20,24 @@ function getRandomQuote() {
     return quotes[randomIndex];
 }
 
+
+// *** Add comments to displayQuote ***
+=======
 // *** Helper to get initials ***
 function getInitials(name) {
     return name.split(' ').map(word => word[0]).join('');
 }
 
-// *** Modify displayQuote ***
+
 function displayQuote() {
+    // Step 1: Get a random quote object from the array
     const quote = getRandomQuote();
+    // Step 2: Set the text content of the quote paragraph
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
-    // *** Display initials along with name ***
-    const initials = getInitials(quote.author);
-    quoteAuthorElement.textContent = `- ${quote.author} (${initials})`; // MODIFIED LINE
-}
+
+    // Step 3: Set the text content of the author paragraph
+    quoteAuthorElement.textContent = `- ${quote.author}`;
+
 
 // --- Event Listeners ---
 // Display a random quote when the button is clicked
